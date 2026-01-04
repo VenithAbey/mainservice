@@ -287,7 +287,9 @@ After connecting your repository, Railway will deploy from the default branch (u
      - If you previously set it to `mainservice`, clear it/leave it blank
      - Railway will look for `pom.xml` at the root level
    - Railway will auto-detect it's a Maven/Spring Boot project
-   - The build command will be: `./mvnw clean package -DskipTests` (or Railway auto-detects)
+   - **Build Command**: Set to: `chmod +x ./mvnw && ./mvnw clean package -DskipTests`
+     - This fixes the "Permission denied" error by making mvnw executable
+     - **Alternative**: Use `bash ./mvnw clean package -DskipTests` if the above doesn't work
 
    **In the "Deploy" section:**
    - The start command will be: `java -jar target/mainservice-0.0.1-SNAPSHOT.jar`
