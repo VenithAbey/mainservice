@@ -2,7 +2,7 @@
 nixPkgs = ["jdk21", "maven"]
 
 [phases.install]
-cmds = ["chmod +x ./mvnw && ./mvnw clean package -DskipTests"]
+cmds = ["./mvnw clean package -DskipTests"]
 
 [start]
 cmd = "java -jar target/mainservice-0.0.1-SNAPSHOT.jar"
